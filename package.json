@@ -1,0 +1,69 @@
+{
+    "name": "auto-profile-switcher",
+    "displayName": "Automatic Profile Switcher",
+    "publisher": "crendking",
+    "description": "Switches profiles automatcially based on mapping and active editor window file extension",
+    "version": "0.1.0",
+    "license": "See license in LICENSE.txt",
+    "engines": {
+        "vscode": "^1.75.0"
+    },
+    "categories": [
+        "Other"
+    ],
+    "icon": "media/icon.png",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/CrendKing/auto-profile-switcher"
+    },
+    "activationEvents": [
+        "onStartupFinished",
+        "onDidOpenTextDocument"
+    ],
+    "main": "./out/extension.js",
+    "contributes": {
+        "configuration": {
+            "properties": {
+                "autoProfileSwitcher.mapping": {
+                    "type": "array",
+                    "scope": "application",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "profile": {
+                                "type": "string"
+                            },
+                            "extensions": {
+                                "type": "array",
+                                "items": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "additionalProperties": false,
+                        "required": [
+                            "profile",
+                            "extensions"
+                        ]
+                    }
+                },
+                "autoProfileSwitcher.disableForWorkspace": {
+                    "type": "boolean",
+                    "scope": "application",
+                    "default": true
+                }
+            }
+        }
+    },
+    "scripts": {
+        "vscode:prepublish": "bun run compile",
+        "compile": "tsc -p ./",
+        "watch": "tsc -watch -p ./"
+    },
+    "devDependencies": {
+        "@types/node": "*",
+        "@types/vscode": "*",
+        "@vscode/vsce": "*",
+        "typescript": "*"
+    }
+}
