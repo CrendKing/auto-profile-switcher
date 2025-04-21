@@ -1,0 +1,4 @@
+*.cmd
+*.vsix
+node_modules/
+out/
