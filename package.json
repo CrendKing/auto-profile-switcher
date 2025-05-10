@@ -3,13 +3,18 @@
     "displayName": "Automatic Profile Switcher",
     "publisher": "crendking",
     "description": "Switches profiles automatcially based on mapping and active editor window file extension",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "license": "See license in LICENSE.txt",
     "engines": {
         "vscode": "^1.75.0"
     },
     "categories": [
         "Other"
+    ],
+    "keywords": [
+        "profile",
+        "switch",
+        "extension"
     ],
     "icon": "media/icon.png",
     "repository": {
