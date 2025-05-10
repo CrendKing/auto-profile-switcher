@@ -1,4 +1,5 @@
 import fs from 'fs/promises'
+import * as path from 'path'
 import * as vscode from 'vscode'
 
 const EXTENSION_NAME = 'autoProfileSwitcher'
@@ -11,21 +12,8 @@ const profileToExtsMap = new Map()
 
 let disableForWorkspace = true
 
-function getGlobalStoragePath(context: vscode.ExtensionContext) {
-    let portableAppPath = process.env.VSCODE_PORTABLE
-    let prefix
-
-    if (portableAppPath) {
-        prefix = `${portableAppPath}/user-data`
-    } else {
-        prefix = `${context.globalStorageUri.fsPath}/../../..`
-    }
-
-    return prefix + '/User/globalStorage/storage.json'
-}
-
 async function buildProfileToIdMap(context: vscode.ExtensionContext) {
-    const globalStoragePath = getGlobalStoragePath(context)
+    const globalStoragePath = path.join(context.globalStorageUri.fsPath, '../storage.json')
     const globalStorageData = await fs.readFile(globalStoragePath, { encoding: 'utf-8' })
     const globalStorageObj = JSON.parse(globalStorageData)
 
