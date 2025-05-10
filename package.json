@@ -11,6 +11,11 @@
     "categories": [
         "Other"
     ],
+    "keywords": [
+        "profile",
+        "switch",
+        "extension"
+    ],
     "icon": "media/icon.png",
     "repository": {
         "type": "git",
