@@ -2,8 +2,8 @@
     "name": "auto-profile-switcher",
     "displayName": "Automatic Profile Switcher",
     "publisher": "crendking",
-    "description": "Switches profiles automatcially based on mapping and active editor window file extension",
-    "version": "0.1.1",
+    "description": "Automatcially switch VSCode profile by file extension",
+    "version": "0.1.2",
     "license": "See license in LICENSE.txt",
     "engines": {
         "vscode": "^1.75.0"

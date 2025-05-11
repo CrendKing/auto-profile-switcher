@@ -1,4 +1,4 @@
-Automatically switch profile based on current file's extension.
+Automatically switch VSCode profile by current file's extension.
 
 For instance, if profile "Python" is configured to be activated by files with extension "py", every time a .py file is opened or focused, we activate the "Python" profile.
 
@@ -18,7 +18,12 @@ Note: since VSCode does not have any official API for getting profile informatio
         "profile": "Python",
         "extensions": ["py"]
     },
-]
+],
+
+// By default, disable the switching if the current VSCode window opened a workspace
+// Useful if the workspace contains variety of file extensions
+
+"autoProfileSwitcher.disableForWorkspace": true,
 ```
 
 ## Attribution
